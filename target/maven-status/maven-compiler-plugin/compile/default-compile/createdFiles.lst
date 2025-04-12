@@ -1,0 +1,6 @@
+com/lab/repository/ClientRepository.class
+com/lab/controllers/ClientController.class
+com/lab/enums/TypeIdentify.class
+com/lab/repository/ClientRepositoryCustom.class
+com/lab/impl/ClientsRepositoryImpl.class
+com/lab/entities/Client.class
