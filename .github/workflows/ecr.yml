@@ -3,8 +3,12 @@ name: Build and Push to ECR
 on:
   push:
     branches:
-      - "**"
-
+      - master
+      - team1
+      - team2
+      - team3
+      - team4
+      - team5
 env:
   ECR_REPO: /lab/
   AWS_REGION: us-east-1
