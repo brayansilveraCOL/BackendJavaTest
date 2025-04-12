@@ -1,0 +1,35 @@
+name: Build and Push to ECR
+
+on:
+  push:
+    branches:
+      - main
+
+env:
+  ECR_REPO: /lab/
+  AWS_REGION: us-east-1
+  IMAGE_TAG: latest
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout código fuente
+        uses: actions/checkout@v3
+
+      - name: Login to Amazon ECR
+        id: login-ecr
+        uses: aws-actions/amazon-ecr-login@v1
+
+      - name: Build Docker image
+        run: |
+          docker build -t $ECR_REPO$IMAGE_TAG:$IMAGE_TAG .
+
+      - name: Tag Docker image
+        run: |
+          docker tag $ECR_REPO$IMAGE_TAG:$IMAGE_TAG ${{ steps.login-ecr.outputs.registry }}/$ECR_REPO$IMAGE_TAG:$IMAGE_TAG
+
+      - name: Push to ECR
+        run: |
+          docker push ${{ steps.login-ecr.outputs.registry }}/$ECR_REPO$IMAGE_TAG:$IMAGE_TAG
