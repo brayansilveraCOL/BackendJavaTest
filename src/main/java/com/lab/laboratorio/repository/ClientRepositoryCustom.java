@@ -1,6 +1,6 @@
 package com.lab.laboratorio.repository;
 
-import com.lab.entities.Client;
+import com.lab.laboratorio.entities.Client;
 
 import java.util.List;
 

@@ -1,0 +1,8 @@
+com/lab/laboratorio/LaboratorioJava17Application.class
+com/lab/laboratorio/entities/Client.class
+com/lab/laboratorio/impl/ClientsRepositoryImpl.class
+com/lab/laboratorio/repository/ClientRepositoryCustom.class
+com/lab/laboratorio/repository/ClientRepository.class
+com/lab/laboratorio/enums/TypeIdentify.class
+com/lab/laboratorio/ServletInitializer.class
+com/lab/laboratorio/controllers/ClientController.class

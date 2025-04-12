@@ -1,6 +1,6 @@
 package com.lab.laboratorio.entities;
 
-import com.lab.enums.TypeIdentify;
+import com.lab.laboratorio.enums.TypeIdentify;
 import jakarta.persistence.*;
 
 @Entity

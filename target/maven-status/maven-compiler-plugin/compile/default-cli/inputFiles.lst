@@ -1,0 +1,8 @@
+/Users/brayansilvera/Documents/GitHub/BackendJavaTest/src/main/java/com/lab/laboratorio/LaboratorioJava17Application.java
+/Users/brayansilvera/Documents/GitHub/BackendJavaTest/src/main/java/com/lab/laboratorio/ServletInitializer.java
+/Users/brayansilvera/Documents/GitHub/BackendJavaTest/src/main/java/com/lab/laboratorio/controllers/ClientController.java
+/Users/brayansilvera/Documents/GitHub/BackendJavaTest/src/main/java/com/lab/laboratorio/entities/Client.java
+/Users/brayansilvera/Documents/GitHub/BackendJavaTest/src/main/java/com/lab/laboratorio/enums/TypeIdentify.java
+/Users/brayansilvera/Documents/GitHub/BackendJavaTest/src/main/java/com/lab/laboratorio/impl/ClientsRepositoryImpl.java
+/Users/brayansilvera/Documents/GitHub/BackendJavaTest/src/main/java/com/lab/laboratorio/repository/ClientRepository.java
+/Users/brayansilvera/Documents/GitHub/BackendJavaTest/src/main/java/com/lab/laboratorio/repository/ClientRepositoryCustom.java
