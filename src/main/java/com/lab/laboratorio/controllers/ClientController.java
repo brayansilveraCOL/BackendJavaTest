@@ -22,7 +22,7 @@ public class ClientController {
     private ClientRepository clientRepository;
 
     @GetMapping
-    @Operation(summary = "Get all Clients")
+    @Operation(summary = "Get all Clients V2")
     @ApiResponse(
             responseCode = "200",
             description = "Get All Clients",
