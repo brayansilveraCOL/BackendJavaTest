@@ -10,9 +10,8 @@ on:
       - team4
       - team5
 env:
-  ECR_REPO: /lab/
+  ECR_REPO: lab
   AWS_REGION: us-east-1
-  IMAGE_TAG: latest
 
 jobs:
   build-and-push:
@@ -21,6 +20,9 @@ jobs:
     steps:
       - name: Checkout código fuente
         uses: actions/checkout@v3
+
+      - name: Get current branch name as image tag
+        run: echo "IMAGE_TAG=${GITHUB_REF_NAME}" >> $GITHUB_ENV
 
       - name: Configurar credenciales AWS
         uses: aws-actions/configure-aws-credentials@v2
@@ -35,12 +37,12 @@ jobs:
 
       - name: Build Docker image
         run: |
-          docker build -t $ECR_REPO$IMAGE_TAG:$IMAGE_TAG .
+          docker build -t $IMAGE_TAG .
 
       - name: Tag Docker image
         run: |
-          docker tag $ECR_REPO$IMAGE_TAG:$IMAGE_TAG ${{ steps.login-ecr.outputs.registry }}/$ECR_REPO$IMAGE_TAG:$IMAGE_TAG
+          docker tag $IMAGE_TAG ${{ steps.login-ecr.outputs.registry }}/$ECR_REPO/$IMAGE_TAG:$IMAGE_TAG
 
       - name: Push to ECR
         run: |
-          docker push ${{ steps.login-ecr.outputs.registry }}/$ECR_REPO$IMAGE_TAG:$IMAGE_TAG
+          docker push ${{ steps.login-ecr.outputs.registry }}/$ECR_REPO/$IMAGE_TAG:$IMAGE_TAG
